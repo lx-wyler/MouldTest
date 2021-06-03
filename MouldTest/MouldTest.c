@@ -24,17 +24,19 @@ int main(void)
 	
 	InitOled();
 	OLED_Clear();
-	//OLED_Displaynum6_8(0, 0, -32164.1);
+	OLED_Displaynum6_8(0, 3, -32164.1);
 	OLED_P6x8Str(0, 1, "This is my nth OLED program.");
 	
 	
     while(1)
     {
 		OLED_Displaynum6_8(0, 0, i++);
-		if(i == 11)
-			i = 1;
         _delay_ms(1000);
-    }
+		if(i == 11){
+			i = 1;
+			OLED_P6x8Str(0, 0, "  ");
+		}
+	}
 }
 
 

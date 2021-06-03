@@ -134,6 +134,18 @@ void OLED_Clear(void)
 
 
 
+// 显示一个字符
+void OLED_Display6_8Char(unsigned char x,unsigned char y,unsigned char c){
+	unsigned char i;
+	
+	Oled_Set_Pos(x, y);
+	
+	for(i = 0; i < 6; i++)
+		OledSendDate(F6x8[c - 32][i]);
+}
+
+
+
 // 显示一组6_8字符串
 void OLED_P6x8Str(unsigned char x,unsigned char y,unsigned char ch[])
 {
@@ -174,7 +186,7 @@ void OLED_Displaynum6_8(const unsigned int x, const unsigned char y, double num)
 		tempchar = ((long)(myabs(num * 100))) % 10;
 		ch[lench + 2] = (unsigned char)(tempchar + 48);
 		
-		ch[lench + 3] = '\n';
+		ch[lench + 3] = '\0';
 	}
 		
 	OLED_P6x8Str(x, y, ch);

@@ -24,9 +24,11 @@
 
 
 void InitOled();
+
+void OLED_Display6_8Char(unsigned char x,unsigned char y,unsigned char c);  // ÏÔÊ¾Ò»¸ö×Ö·û
 void OLED_P6x8Str(unsigned char x,unsigned char y,unsigned char ch[]);
 void OLED_Displaynum6_8(const unsigned int x, const unsigned char y, double num);  //??????¡Á?
-void OLED_Clear(void)  ;
+void OLED_Clear(void);
 
 
 #endif /* OLED_H_ */
